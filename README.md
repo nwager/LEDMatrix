@@ -11,9 +11,9 @@ The easiest way to add your own 8x8 drawing is by using [Piskel](https://www.pis
 * Moreover, since the LEDs are circular lights spaced far apart, drawings may not translate well in general
 * The program is set up to handle one frame. If you want to use multiple frames, it gets more complicated.
 
-![Export Piskel to C File](documents/images/piskel_tutorial.PNG)
+![Export Piskel to C File](documents/piskel_tutorial.png)
 
-The next step is to open that C file. It should look something like this (example file ([documents/New Piskel.c](documents/"New Piskel.c") is the [Kirby drawing](https://www.pixilart.com/art/kirby-in-8x8-pixels-e32a65af67f1eb1) I stole:
+The next step is to open that C file. It should look something like this (the [example file](/documents) is the [Kirby drawing](https://www.pixilart.com/art/kirby-in-8x8-pixels-e32a65af67f1eb1) I stole:
 
 ```c
 #include <stdint.h>
