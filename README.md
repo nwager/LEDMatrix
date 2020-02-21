@@ -13,9 +13,9 @@ The easiest way to add your own 8x8 drawing is by using [Piskel](https://www.pis
 
 ![Export Piskel to C File](images/piskel_tutorial.PNG)
 
-The next step is to open that C file. It should look something like this (this example file is is a Kirby drawing:
+The next step is to open that C file. It should look something like this (this example file is the [Kirby drawing](https://www.pixilart.com/art/kirby-in-8x8-pixels-e32a65af67f1eb1) I stole:
 
-```
+```c
 #include <stdint.h>
 
 #define NEW_PISKEL_FRAME_COUNT 1
@@ -39,18 +39,24 @@ static const uint32_t new_piskel_data[1][64] = {
 ```
 
 Copy just the 2D array (`new_piskel` might vary depending on what you name the drawing):
-```
+```c
 static const uint32_t new_piskel_data[1][64] = {
 ...
 };
 ```
 and, in the `led_matrix.ino` file, replace the 2D array that is found directly under a comment saying `// CUSTOM PISKEL DRAWING HERE`. The next step is to paste this line:
 
-`uint8_t* new_piskel = (uint8_t*) new_piskel_data[0];`
+```c
+uint8_t* new_piskel = (uint8_t*) new_piskel_data[0];
+```
 
 under the comment saying `// PISKEL DRAWING POINTER`. **NOTE:** if the name of your Piskel in the 2D array is ANYTHING OTHER THAN `new_piskel`, you need to replace all occurences of `new_piskel` with the drawing name (Command + F should suffice).
 
 After that, upload the code and switch to pickup position 2 (bridge + middle) to see your drawing!
  
 
-Dedicated to G-Dawg
+
+
+
+
+Dedicated to G-Dawg. Special thanks to Brian for helping with the programming.
